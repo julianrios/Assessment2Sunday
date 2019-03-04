@@ -115,10 +115,10 @@ public class ArrayListsTest {
         original.add(7);
         // When
         Integer toRemove = 5;
+        original.remove(0);
+        original.remove(0);
+        original.remove(0);
         ArrayList<Integer> actual = arrayLists.removeAll(original, toRemove);
-        original.remove(0);
-        original.remove(0);
-        original.remove(0);
         // Then
         Assert.assertEquals(original, actual);
     }
@@ -134,10 +134,12 @@ public class ArrayListsTest {
         original.add(7);
         // When
         Integer toRemove = 5;
-        ArrayList<Integer> actual = arrayLists.removeAll(original, toRemove);
         original.remove(0);
         original.remove(1);
+        System.out.println(original.toString());
+        ArrayList<Integer> actual = arrayLists.removeAll(original, toRemove);
         // Then
+        System.out.println(actual.toString());
         Assert.assertEquals(original, actual);
     }
 
